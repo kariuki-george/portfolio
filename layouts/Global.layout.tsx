@@ -7,7 +7,7 @@ interface Props {
 }
 const Global: NextPage<Props> = ({ children }) => {
   return (
-    <div className="w-full h-screen max-w-[1000px]  bg-blue m-auto ">
+    <div className="w-full h-screen max-w-[1100px]  bg-blue m-auto text-white ">
        <Head>
         <title>smiley-geek</title>
         <meta

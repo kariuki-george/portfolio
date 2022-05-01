@@ -16,6 +16,9 @@ module.exports = {
         black: {
           500: "#000000",
         },
+        green: {
+          brand: "#77FF94",
+        },
       },
     },
   },
