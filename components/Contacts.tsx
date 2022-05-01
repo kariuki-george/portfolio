@@ -6,14 +6,14 @@ const Contacts = () => {
   return (
     <div className="my-5 p-5 flex flex-col items-center">
       <section className="text-3xl underline decoration-wavy decoration-green-brand mb-10">
-        Let&apos;s talk
+        let&apos;s talk
       </section>
       <section className="flex sm:flex-col md:flex-row items-center ">
         <section>
           <img className=" object-contain" src="/chat.svg" alt="man with phone" />
         </section>
-        <section className=" flex flex-col items-center p-3 border border-green-brand/5 sm:w-4/5 md-1/2 ">
-          <span className="text-3xl my-3">Get in touch</span>
+        <section className=" flex flex-col items-center p-3 border border-green-brand/10 sm:full md-1/2 ">
+          <span className="text-3xl my-3">get in touch</span>
           <section>
             <form className="flex flex-col sm:max-w-[350px] max-w-[600px]  ">
               <input

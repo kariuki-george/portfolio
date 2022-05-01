@@ -5,7 +5,7 @@ const About: NextPage = () => {
   return (
     <div className="p-10 my-10 w-full flex flex-col items-center justify-center">
       <span className="   text-4xl underline underline-offset-2 decoration-green-brand/40 decoration-wavy">
-        Go Beyond with a Remote software developer
+        go beyond with a remote software developer
       </span>
       <span className="flex sm:flex-col md:flex-row w-full md:min-h-[450px] relative md:items-center md:justify-end ">
         <span className="sm:w-full md:w-2/3 md:absolute md:left-0 md:flex md:justify-center  md:min-h-[600px] ">

@@ -8,7 +8,7 @@ const Hero: NextPage = () => {
         <img className="w-full " src="/heropage.svg" alt="" />
       </section>
       <section className="w-full flex flex-col items-center  md:items-start lg:items-center md:w-1/2">
-        <span className="text-5xl">
+        <span className="text-5xl sm:text-4xl">
           I&apos;m Kariuki <span className="text-green-brand">George</span>
         </span>
 
