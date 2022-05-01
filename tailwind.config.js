@@ -4,9 +4,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./layouts/**/*.{js,ts,jsx,tsx}",
   ],
+  media: false,
   theme: {
     screens: {
-      sm: "420px",
+      sm: "100px",
       md: "768px",
       lg: "976px",
       xl: "1440px",
