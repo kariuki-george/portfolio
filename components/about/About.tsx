@@ -1,19 +1,20 @@
 import { NextPage } from "next";
+import Image from "next/image";
 import React from "react";
 
 const About: NextPage = () => {
   return (
-    <div className="p-10 pt-2 mb-10 w-full flex flex-col items-center justify-center">
-      
+    <div id="about" className="p-10 pt-2 mb-10 w-full flex flex-col items-center justify-center">
       <span className="   text-4xl underline underline-offset-2 decoration-green-brand/40 decoration-wavy">
         go beyond with a remote software developer
       </span>
       <span className="flex sm:flex-col md:flex-row w-full md:min-h-[450px] relative md:items-center md:justify-end ">
-        <span className="sm:w-full md:w-2/3 md:absolute md:left-0 md:flex md:justify-center  md:min-h-[600px] ">
-          <img
+        <span className="sm:w-full md:w-2/3 py-3 md:absolute md:left-0 md:flex md:justify-center  md:min-h-[600px] relative ">
+          <Image
+            layout="fill"
+            objectFit="fill"
             src="/aboutpage.svg"
-            className="w-full my-3 object-contain "
-            alt="about section svg"
+            alt="hero image"
           />
         </span>
 
