@@ -5,7 +5,7 @@ import { FiGithub } from "react-icons/fi";
 const Contacts = () => {
   return (
     <div className="my-5 p-5 flex flex-col items-center">
-      <section className="text-3xl underline decoration-wavy decoration-green-brand mb-10">
+      <section className="text-3xl underline decoration-wavy decoration-green-brand/40 mb-10">
         let&apos;s talk
       </section>
       <section className="flex sm:flex-col md:flex-row items-center ">
