@@ -1,27 +1,34 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import About from "../components/about";
+import Contacts from "../components/Contacts";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Projects from "../components/Projects";
+import Footer from "../components/Footer";
+import HeroLayout from "../components/HeroLayout";
+import Black from "../layouts/Black";
+import White from "../layouts/White";
+import TalkLayout from "../components/TalkLayout";
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>smiley-geek</title>
-        <meta
-          name="description"
-          content="This is a portfolio for Kariuki George Thuo"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div className="relative w-full z-0">
+      <Header />
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to smiley-geek hub</h1>
-
-        <p className={styles.description}>
-          If you see this page, the site is still under development. Thanks for
-          your visit.
-        </p>
-      </main>
+      <Black>
+        <Hero />
+      </Black>
+      <HeroLayout />
+      <White>
+        <About />
+      </White>
+      <TalkLayout />
+      <Black>
+        <Projects />
+        <Contacts />
+        <Footer />
+      </Black>
     </div>
   );
 };
