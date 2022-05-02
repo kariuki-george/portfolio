@@ -14,15 +14,16 @@ import TalkLayout from "../components/TalkLayout";
 const Home: NextPage = () => {
   return (
     <div className="relative w-full z-0">
+      <Header />
+
       <Black>
-        <Header />
         <Hero />
       </Black>
       <HeroLayout />
       <White>
         <About />
       </White>
-      <TalkLayout/>
+      <TalkLayout />
       <Black>
         <Projects />
         <Contacts />
