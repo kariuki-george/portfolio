@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero: NextPage = () => {
   return (
-    <div className="flex w-full sm:flex-col h-screen md:flex-row items-center justify-center md:justify-start py-4 relative  p-5">
+    <div className="flex w-full sm:flex-col min-h-screen md:flex-row items-center justify-center md:justify-start  relative  p-5 py-4">
       <section className="sm:inline md:hidden m-3 my-10    w-full">
         <img className="w-full " src="/heropage.svg" alt="" />
       </section>
