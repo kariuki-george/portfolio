@@ -2,8 +2,8 @@ import React from "react";
 
 const Layout = () => {
   return (
-    <div className="w-full ">
-      <img className="w-full " src="/skillspage.svg" alt="" />
+    <div >
+      <img className="w-full " src="/talk.svg" alt="" />
     </div>
   );
 };

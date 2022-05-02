@@ -5,7 +5,7 @@ import skills from "../../lib/skills";
 
 const Skills: NextPage = () => {
   return (
-    <div className="w-full my-10 flex flex-col justify-center items-center">
+    <div className="w-full mt-10 flex flex-col justify-center items-center">
       <section className="text-4xl my-3 mb-6 underline underline-offset-2 decoration-green-brand/40 decoration-wavy">
         my tools of work
       </section>

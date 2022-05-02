@@ -1,14 +1,13 @@
 import { NextPage } from "next";
-import type { AppProps } from "next/app";
 import React from "react";
-import Head from "next/head"
+import Head from "next/head";
 interface Props {
   children: React.ReactNode;
 }
 const Global: NextPage<Props> = ({ children }) => {
   return (
-    <div className="w-full h-screen max-w-[1100px]  bg-blue m-auto text-white ">
-       <Head>
+    <div className="w-screen bg-black ">
+      <Head>
         <title>smiley-geek</title>
         <meta
           name="description"

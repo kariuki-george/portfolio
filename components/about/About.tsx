@@ -3,7 +3,8 @@ import React from "react";
 
 const About: NextPage = () => {
   return (
-    <div className="p-10 my-10 w-full flex flex-col items-center justify-center">
+    <div className="p-10 pt-2 mb-10 w-full flex flex-col items-center justify-center">
+      
       <span className="   text-4xl underline underline-offset-2 decoration-green-brand/40 decoration-wavy">
         go beyond with a remote software developer
       </span>
