@@ -2,15 +2,20 @@ import React from "react";
 import { FiTwitter } from "react-icons/fi";
 import { BsInstagram } from "react-icons/bs";
 import { FiGithub } from "react-icons/fi";
+import { AiOutlineMail } from "react-icons/ai";
 const Contacts = () => {
   return (
-    <div className="my-5 p-5 flex flex-col items-center">
+    <div id="contacts" className="my-5 p-5 flex flex-col items-center">
       <section className="text-3xl underline decoration-wavy decoration-green-brand/40 mb-10">
         let&apos;s talk
       </section>
       <section className="flex sm:flex-col md:flex-row items-center ">
         <section>
-          <img className=" object-contain" src="/chat.svg" alt="man with phone" />
+          <img
+            className=" object-contain"
+            src="/chat.svg"
+            alt="man with phone"
+          />
         </section>
         <section className=" flex flex-col items-center p-3 border border-green-brand/10 sm:full md-1/2 ">
           <span className="text-3xl my-3">get in touch</span>
@@ -48,19 +53,40 @@ const Contacts = () => {
           <span className="text-xl my-7">or</span>
           <section className="flex p-3 w-1/2 justify-around text-xl">
             <span className="hover:cursor-pointer text-green-brand ">
-              <a target="_blank" rel="noreferrer" href="https://twitter.com/_kariuki_george">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://twitter.com/_kariuki_george"
+              >
                 {" "}
                 <FiTwitter />
               </a>
             </span>
             <span className="hover:cursor-pointer text-green-brand ">
-              <a target="_blank" rel="noreferrer" href="https://www.instagram.com/smiling_thuo/">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.instagram.com/_kariuki_george/"
+              >
                 <BsInstagram />
               </a>
             </span>
             <span className="hover:cursor-pointer text-green-brand ">
-              <a target="_blank" rel="noreferrer" href="https://github.com/smiley-geek">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/smiley-geek"
+              >
                 <FiGithub />
+              </a>
+            </span>
+            <span className="hover:cursor-pointer text-green-brand ">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="mailto:kariukigeorge2030@gmail.com?Subject=hi"
+              >
+                <AiOutlineMail />
               </a>
             </span>
           </section>
