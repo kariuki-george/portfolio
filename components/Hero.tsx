@@ -12,6 +12,7 @@ const Hero: NextPage = () => {
           objectFit="fill"
           src="/heropage.svg"
           alt="hero image"
+          priority
         />
       </section>
       <section className="w-full flex flex-col items-center  md:items-start lg:items-center md:w-1/2">
