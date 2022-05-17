@@ -1,26 +1,25 @@
-import { extendType, objectType, stringArg } from "nexus";
+import { extendType, objectType, stringArg, queryType } from "nexus";
 
 export const Message = objectType({
   name: "Message",
   definition(t) {
-    t.id("id");
+    t.int("id");
 
-    t.string("email");
+    t.nonNull.string("email");
 
-    t.string("message");
-    t.string("firstName");
-    t.string("lastName");
-    t.string("subject");
+    t.nonNull.string("message");
+    t.nonNull.string("firstName");
+    t.nonNull.string("lastName");
+    t.nonNull.string("subject");
   },
 });
 
-export const allMessages = extendType({
-  type: "Query",
+export const allMessages = queryType({
   definition(t) {
-    t.list.field("allMessages", {
+    t.list.field("messages", {
       type: "Message",
-      resolve: async (_, _args, ctx) => {
-        return await ctx.prisma.message.findMany();
+      resolve(_, __, ctx) {
+        return ctx.prisma.message.findMany();
       },
     });
   },
@@ -29,7 +28,7 @@ export const allMessages = extendType({
 export const newMessage = extendType({
   type: "Mutation",
   definition(t) {
-    t.field("newMessage", {
+    t.field("message", {
       type: "Message",
       args: {
         subject: stringArg(),
@@ -39,25 +38,10 @@ export const newMessage = extendType({
         lastName: stringArg(),
         email: stringArg(),
       },
-      async resolve(_, args, ctx) {
-       
-        const {
-          subject,
-          message,
-
-          firstName,
-          lastName,
-          email,
-        } = args;
-
-        return await ctx.prisma.message.create({
+      resolve(_, args, ctx) {
+        return ctx.prisma.message.create({
           data: {
-            subject,
-            message,
-
-            firstName,
-            lastName,
-            email,
+            ...args,
           },
         });
       },

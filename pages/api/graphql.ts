@@ -10,18 +10,8 @@ const apolloServer = new ApolloServer({
 
 const startServer = apolloServer.start();
 
-export default async (req, res) => {
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://studio.apollographql.com"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
+export default async (req: any, res: any) => {
   if (req.method === "OPTIONS") {
-    res.end();
     return false;
   }
   await startServer;

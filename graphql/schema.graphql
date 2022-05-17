@@ -3,18 +3,18 @@
 
 
 type Message {
-  email: String
-  firstName: String
-  id: ID
-  lastName: String
-  message: String
-  subject: String
+  email: String!
+  firstName: String!
+  id: Int
+  lastName: String!
+  message: String!
+  subject: String!
 }
 
 type Mutation {
-  newMessage(email: String, firstName: String, lastName: String, message: String, subject: String): Message
+  message(email: String, firstName: String, lastName: String, message: String, subject: String): Message
 }
 
 type Query {
-  allMessages: [Message]
+  messages: [Message]
 }
