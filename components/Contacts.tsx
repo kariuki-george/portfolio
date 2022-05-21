@@ -172,7 +172,7 @@ const newMessage = gql`
     $lastName: String
     $email: String
   ) {
-    newMessage(
+    message(
       subject: $subject
       message: $message
       firstName: $firstName
