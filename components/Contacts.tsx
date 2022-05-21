@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { FiTwitter } from "react-icons/fi";
 import { BsInstagram } from "react-icons/bs";
 import { FiGithub } from "react-icons/fi";
-import { AiOutlineMail } from "react-icons/ai";
+import { AiOutlineMail, AiOutlineLinkedin } from "react-icons/ai";
+
 import { gql, useMutation } from "@apollo/client";
 import toast from "react-hot-toast";
 
@@ -118,7 +119,7 @@ const Contacts = () => {
           </section>
           <span className="text-xl my-7">or</span>
           <section className="flex p-3 w-1/2 justify-around text-xl">
-            <span className="hover:cursor-pointer text-green-brand ">
+            <span className="mx-1 hover:cursor-pointer text-green-brand ">
               <a
                 target="_blank"
                 rel="noreferrer"
@@ -128,7 +129,7 @@ const Contacts = () => {
                 <FiTwitter />
               </a>
             </span>
-            <span className="hover:cursor-pointer text-green-brand ">
+            <span className="mx-1 hover:cursor-pointer text-green-brand ">
               <a
                 target="_blank"
                 rel="noreferrer"
@@ -137,7 +138,7 @@ const Contacts = () => {
                 <BsInstagram />
               </a>
             </span>
-            <span className="hover:cursor-pointer text-green-brand ">
+            <span className="mx-1 hover:cursor-pointer text-green-brand ">
               <a
                 target="_blank"
                 rel="noreferrer"
@@ -146,7 +147,16 @@ const Contacts = () => {
                 <FiGithub />
               </a>
             </span>
-            <span className="hover:cursor-pointer text-green-brand ">
+            <span className="mx-1 hover:cursor-pointer text-green-brand ">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.linkedin.com/in/kariukigeorge/"
+              >
+                <AiOutlineLinkedin />
+              </a>
+            </span>
+            <span className="mx-1 hover:cursor-pointer text-green-brand ">
               <a
                 target="_blank"
                 rel="noreferrer"
