@@ -21,4 +21,17 @@ export const schema = makeSchema({
     export: "Context",
     module: join(process.cwd(), "graphql", "context.ts"),
   },
+  sourceTypes: {
+    modules: [
+      {
+        module: "@prisma/client",
+        alias: "prisma",
+      },
+    ],
+  },
 });
+
+
+
+
+

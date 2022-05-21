@@ -4,9 +4,7 @@ export const Message = objectType({
   name: "Message",
   definition(t) {
     t.int("id");
-
     t.nonNull.string("email");
-
     t.nonNull.string("message");
     t.nonNull.string("firstName");
     t.nonNull.string("lastName");
@@ -19,6 +17,7 @@ export const allMessages = queryType({
     t.list.field("messages", {
       type: "Message",
       resolve(_, __, ctx) {
+       
         return ctx.prisma.message.findMany();
       },
     });
