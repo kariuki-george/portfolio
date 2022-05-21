@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import React from "react";
 import Head from "next/head";
+import { Toaster } from "react-hot-toast";
 interface Props {
   children: React.ReactNode;
 }
@@ -15,6 +16,7 @@ const Global: NextPage<Props> = ({ children }) => {
         />
         <link rel="icon" href="/favicon.svg" />
       </Head>
+      <Toaster />
       {children}
     </div>
   );

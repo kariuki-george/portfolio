@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Message" ALTER COLUMN "message" DROP NOT NULL;
+ALTER TABLE "Message" ALTER COLUMN "subject" DROP NOT NULL;
