@@ -19,11 +19,11 @@ model Message {
   updatedAt DateTime @updatedAt
   
   
-  message String ?
+  message String 
 
-  subject String ?
+  subject String 
  
-   email String  ?  
-  firstName String ?
-  lastName String ?
+   email String   
+  firstName String 
+  lastName String 
 }
