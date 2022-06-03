@@ -1,9 +1,9 @@
-import { extendType, objectType, stringArg, queryType } from "nexus";
+import { extendType, objectType, stringArg, queryType, nonNull } from "nexus";
 
 export const Message = objectType({
   name: "Message",
   definition(t) {
-    t.int("id");
+    t.nonNull.int("id");
     t.nonNull.string("email");
     t.nonNull.string("message");
     t.nonNull.string("firstName");
@@ -17,7 +17,6 @@ export const allMessages = queryType({
     t.list.field("messages", {
       type: "Message",
       resolve(_, __, ctx) {
-       
         return ctx.prisma.message.findMany();
       },
     });
@@ -26,16 +25,16 @@ export const allMessages = queryType({
 
 export const newMessage = extendType({
   type: "Mutation",
+
   definition(t) {
     t.field("message", {
       type: "Message",
       args: {
-        subject: stringArg(),
-        message: stringArg(),
-
-        firstName: stringArg(),
-        lastName: stringArg(),
-        email: stringArg(),
+        subject: nonNull("String"),
+        message: nonNull("String"),
+        firstName: nonNull("String"),
+        lastName: nonNull("String"),
+        email: nonNull("String"),
       },
       resolve(_, args, ctx) {
         return ctx.prisma.message.create({
