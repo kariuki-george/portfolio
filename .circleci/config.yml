@@ -6,4 +6,4 @@ jobs:
     steps:
      -run:
       name: Testing if running
-      command: echo: "Running now"
+      command: echo: 'Running now'
