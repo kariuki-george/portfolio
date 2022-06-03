@@ -6,4 +6,10 @@ jobs:
     steps:
      -run:
       name: Testing if running
-      command: echo 'Running now'
+      command: |
+       echo 'Running now'
+     -run: 
+      name: The secong test
+      command: |
+       ls -la
+       echo "nhii"
