@@ -13,7 +13,7 @@ jobs:
             echo 'This is the delivery pipeline'
             sudo apt update
             sudo apt upgrade -y
-            sudo apt install nodejs
+            sudo apt install nodejs -y
             node -v
             
   # fetching code from the repo
