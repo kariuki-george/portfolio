@@ -176,11 +176,11 @@ export default Contacts;
 
 const newMessage = gql`
   mutation newMessage(
-    $subject: String
-    $message: String
-    $firstName: String
-    $lastName: String
-    $email: String
+    $subject: String!
+    $message: String!
+    $firstName: String!
+    $lastName: String!
+    $email: String!
   ) {
     message(
       subject: $subject
