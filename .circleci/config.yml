@@ -11,6 +11,11 @@ jobs:
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
+            sudo apt update
+            sudo apt upgrade -y
+            sudo apt install nodejs
+            node -v
+            
   # fetching code from the repo
   Fetch-Code:
     docker:
