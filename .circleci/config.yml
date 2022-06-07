@@ -24,7 +24,7 @@ jobs:
           name: Getting the Code
           command: |
             ls -al
-            echo '^^^Your repo files^^^'
+            echo $CIRCLE_BRANCH
   # running a node container
   Using-Node:
     docker:
