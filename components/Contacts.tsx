@@ -4,7 +4,6 @@ import { BsInstagram } from "react-icons/bs";
 import { FiGithub } from "react-icons/fi";
 import { AiOutlineMail, AiOutlineLinkedin } from "react-icons/ai";
 
-import { gql, useMutation } from "@apollo/client";
 import toast from "react-hot-toast";
 
 const Contacts = () => {
@@ -14,35 +13,34 @@ const Contacts = () => {
   const [subject, setSubject] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
-  const [newUser, { data, loading, error }] = useMutation(newMessage);
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    if (!(firstName && lastName && email && subject && message)) {
-      return toast.error("please fill all fields");
-    }
+  // const handleSubmit = (e: any) => {
+  //   e.preventDefault();
+  //   if (!(firstName && lastName && email && subject && message)) {
+  //     return toast.error("please fill all fields");
+  //   }
 
-    return newUser({
-      variables: {
-        subject,
-        message,
-        email,
-        firstName,
-        lastName,
-      },
-    });
-  };
+  //   return newUser({
+  //     variables: {
+  //       subject,
+  //       message,
+  //       email,
+  //       firstName,
+  //       lastName,
+  //     },
+  //   });
+  // };
 
-  useEffect(() => {
-    if (loading) {
-      toast.loading("sending", { duration: 2000 });
-    }
-    if (error) {
-      toast.error(error?.message);
-    }
-    if (data) {
-      toast.success("successful");
-    }
-  }, [loading, error, data]);
+  // useEffect(() => {
+  //   if (loading) {
+  //     toast.loading("sending", { duration: 2000 });
+  //   }
+  //   if (error) {
+  //     toast.error(error?.message);
+  //   }
+  //   if (data) {
+  //     toast.success("successful");
+  //   }
+  // }, [loading, error, data]);
 
   return (
     <div id="contacts" className="my-5 p-5 flex flex-col items-center">
@@ -62,7 +60,7 @@ const Contacts = () => {
           <section>
             <form
               className="flex flex-col sm:max-w-[350px] max-w-[600px]  "
-              onSubmit={handleSubmit}
+              onSubmit={() => {}}
             >
               <input
                 type="text"
@@ -110,8 +108,8 @@ const Contacts = () => {
               />
               <button
                 className="border p-2 text-xl text-green-brand rounded bg-green-brand/5 hover:text-white"
-                onClick={handleSubmit}
-                disabled={loading}
+                onClick={() => {}}
+                disabled={false}
               >
                 send message
               </button>
@@ -173,23 +171,3 @@ const Contacts = () => {
 };
 
 export default Contacts;
-
-const newMessage = gql`
-  mutation newMessage(
-    $subject: String!
-    $message: String!
-    $firstName: String!
-    $lastName: String!
-    $email: String!
-  ) {
-    message(
-      subject: $subject
-      message: $message
-      firstName: $firstName
-      lastName: $lastName
-      email: $email
-    ) {
-      id
-    }
-  }
-`;

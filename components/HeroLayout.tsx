@@ -3,8 +3,8 @@ import React from "react";
 const HeroLayout = () => {
   return (
     <div>
-      <section>
-        <img src="/hero.svg" alt="" className=" w-full " />
+      <section className=" -mb-1">
+        <img src="/wavesOpacity.svg" className="w-full rotate-180" alt="" />
       </section>
     </div>
   );
