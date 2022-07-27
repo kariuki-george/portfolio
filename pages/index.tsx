@@ -10,7 +10,6 @@ import Black from "../layouts/Black";
 import White from "../layouts/White";
 import TalkLayout from "../components/TalkLayout";
 
-
 const Home: NextPage = () => {
   return (
     <div className="relative w-full z-0">
@@ -34,4 +33,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
