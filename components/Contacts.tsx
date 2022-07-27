@@ -3,6 +3,7 @@ import { FiTwitter } from "react-icons/fi";
 import { BsInstagram } from "react-icons/bs";
 import { FiGithub } from "react-icons/fi";
 import { AiOutlineMail, AiOutlineLinkedin } from "react-icons/ai";
+import { gql, GraphQLClient } from "graphql-request";
 
 import toast from "react-hot-toast";
 
@@ -12,35 +13,33 @@ const Contacts = () => {
   const [email, setEmail] = useState<string>("");
   const [subject, setSubject] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
-  // const handleSubmit = (e: any) => {
-  //   e.preventDefault();
-  //   if (!(firstName && lastName && email && subject && message)) {
-  //     return toast.error("please fill all fields");
-  //   }
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    if (!(firstName && lastName && email && subject && message)) {
+      return toast.error("please fill all fields");
+    }
 
-  //   return newUser({
-  //     variables: {
-  //       subject,
-  //       message,
-  //       email,
-  //       firstName,
-  //       lastName,
-  //     },
-  //   });
-  // };
+    const variables = {
+      createMessage: {
+        subject,
+        message,
+        email,
+        firstName,
+        lastName,
+      },
+    };
+    setLoading(true);
+    try {
+      await messageMutation(variables);
+      toast.success("Successfully sent!");
+    } catch (error) {
+      toast.error("Something went wrong!");
+    }
 
-  // useEffect(() => {
-  //   if (loading) {
-  //     toast.loading("sending", { duration: 2000 });
-  //   }
-  //   if (error) {
-  //     toast.error(error?.message);
-  //   }
-  //   if (data) {
-  //     toast.success("successful");
-  //   }
-  // }, [loading, error, data]);
+    setLoading(false);
+  };
 
   return (
     <div id="contacts" className="my-5 p-5 flex flex-col items-center">
@@ -108,10 +107,10 @@ const Contacts = () => {
               />
               <button
                 className="border p-2 text-xl text-green-brand rounded bg-green-brand/5 hover:text-white"
-                onClick={() => {}}
+                onClick={handleSubmit}
                 disabled={false}
               >
-                send message
+                {loading ? "sending..." : "send message"}
               </button>
             </form>
           </section>
@@ -171,3 +170,28 @@ const Contacts = () => {
 };
 
 export default Contacts;
+
+const createMessage = gql`
+  mutation Mutation($createMessage: CreateMessageInput!) {
+    createMessage(createMessage: $createMessage) {
+      id
+      createdAt
+      message
+      subject
+      email
+      firstName
+      lastName
+      answered
+    }
+  }
+`;
+
+async function messageMutation(variables: {}) {
+  const endpoint = "https://geekhub.up.railway.app/graphql";
+
+  const graphQLClient = new GraphQLClient(endpoint);
+
+  const data = await graphQLClient.request(createMessage, variables);
+
+  return data;
+}
