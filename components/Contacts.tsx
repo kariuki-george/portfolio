@@ -3,9 +3,9 @@ import { FiTwitter } from "react-icons/fi";
 import { BsInstagram } from "react-icons/bs";
 import { FiGithub } from "react-icons/fi";
 import { AiOutlineMail, AiOutlineLinkedin } from "react-icons/ai";
-import { gql, GraphQLClient } from "graphql-request";
 
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const Contacts = () => {
   const [firstName, setFirstName] = useState<string>("");
@@ -20,26 +20,29 @@ const Contacts = () => {
     if (!(firstName && lastName && email && subject && message)) {
       return toast.error("please fill all fields");
     }
-
-    const variables = {
-      createMessage: {
-        subject,
-        message,
-        email,
-        firstName,
-        lastName,
-      },
-    };
     setLoading(true);
-    try {
-      await messageMutation(variables);
-      toast.success("Successfully sent!");
-    } catch (error) {
-      toast.error("Something went wrong!");
-    }
-
+    const res = await axios.post("http://localhost:5000/api/message", {
+      firstName,
+      lastName,
+      email,
+      subject,
+      message,
+    });
     setLoading(false);
+    if (res.data.error) {
+      toast.error(res.data.message);
+    }
+    if (res.data.success) {
+      toast.success(res.data.message);
+    }
   };
+  useEffect(() => {
+    if (loading) {
+      toast.loading("Sending message", { id: "createMessageLoader" });
+    } else {
+      toast.dismiss("createMessageLoader");
+    }
+  }, [loading]);
 
   return (
     <div id="contacts" className="my-5 p-5 flex flex-col items-center">
@@ -170,28 +173,3 @@ const Contacts = () => {
 };
 
 export default Contacts;
-
-const createMessage = gql`
-  mutation Mutation($createMessage: CreateMessageInput!) {
-    createMessage(createMessage: $createMessage) {
-      id
-      createdAt
-      message
-      subject
-      email
-      firstName
-      lastName
-      answered
-    }
-  }
-`;
-
-async function messageMutation(variables: {}) {
-  const endpoint = "https://geekhub.up.railway.app/graphql";
-
-  const graphQLClient = new GraphQLClient(endpoint);
-
-  const data = await graphQLClient.request(createMessage, variables);
-
-  return data;
-}
