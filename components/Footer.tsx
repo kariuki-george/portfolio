@@ -2,12 +2,10 @@ import { NextPage } from "next";
 import React from "react";
 import Link from "next/link";
 import { BsArrowUp } from "react-icons/bs";
-import { useRouter } from "next/router";
 
 const Footer: NextPage = () => {
-  const router = useRouter();
   const handleTop = () => {
-    router.replace("/");
+    window.scroll({ top: 0, behavior: "smooth" });
   };
   return (
     <div className="w-full flex justify-between p-10 my-10  items-center  ">
