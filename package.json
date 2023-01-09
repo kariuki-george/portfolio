@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "dotenv": "^16.0.3",
     "kbar": "^0.1.0-beta.36",
     "next": "12.1.5",
+    "nodemailer": "^6.8.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-hot-toast": "^2.2.0",
