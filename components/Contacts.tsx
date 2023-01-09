@@ -16,18 +16,22 @@ const Contacts = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = async (e: any) => {
+    return toast.error("Sorry this operation has been temporarily disabled.");
     e.preventDefault();
     if (!(firstName && lastName && email && subject && message)) {
       return toast.error("please fill all fields");
     }
     setLoading(true);
-    const res = await axios.post("https://geekhub.smiley-geek-codes.tech/api/message", {
-      firstName,
-      lastName,
-      email,
-      subject,
-      message,
-    });
+    const res = await axios.post(
+      "https://geekhub.smiley-geek-codes.tech/api/message",
+      {
+        firstName,
+        lastName,
+        email,
+        subject,
+        message,
+      }
+    );
     setLoading(false);
     if (res.data.error) {
       toast.error(res.data.message);
