@@ -5,14 +5,6 @@ updates:
     schedule:
       interval: "daily"
     labels:
-      - "dependencies"
-      - "yarn"
+      - "yarn dependencies"
       - "merge"
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    labels:
-      - "dependencies"
-      - "github-actions"
-      - "merge"
+  
