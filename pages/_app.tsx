@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
         {
           detailed: false,
-          ignoreLocalhost: !true,
+          ignoreLocalhost: true,
           ignoreOwnVisits: true,
         }
       );
