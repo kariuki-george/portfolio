@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         url,
         {
           server: "https://ackee.p.kariukigeorge.me",
-          domainId: "bba72abc-f3b0-482d-b4ac-5efb2e60f17d",
+          domainId: "f7cb3d78-c173-4c08-a4b8-9a9fbc418d65",
         },
         {
           detailed: false,

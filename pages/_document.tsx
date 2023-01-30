@@ -9,7 +9,7 @@ class MyDocument extends Document {
             async
             src="https://ackee.p.kariukigeorge.me/tracker.js"
             data-ackee-server="https://ackee.p.kariukigeorge.me"
-            data-ackee-domain-id="bba72abc-f3b0-482d-b4ac-5efb2e60f17d"
+            data-ackee-domain-id="f7cb3d78-c173-4c08-a4b8-9a9fbc418d65"
           ></script>
         </Head>
         <body className="bg-black-500 max-w-screen overflow-x-hidden ">
