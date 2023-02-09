@@ -10,17 +10,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-
-model Note{
-  id Int @id @default(autoincrement())
-  title String 
-  content String 
-  orderNo Int 
-  parentId Int?
+model Notes {
+  id          Int         @id @default(autoincrement())
+  title       String
+  content     String?
+  orderNo     Int
+ 
+  updatedAt   DateTime    @updatedAt
+  createdAt   DateTime    @default(now())
+  notesGroups NotesGroups @relation(fields: [notesGroupId], references: [id])
+  notesGroupId  Int 
 }
 
-
-
-
-
+model NotesGroups {
+  id        Int      @id @default(autoincrement())
+  title     String
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  notes     Notes[]
+}

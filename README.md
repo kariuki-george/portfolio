@@ -16,6 +16,8 @@
     2. Tailwindcss 
     3. Radix ui
     4. Storybook
+    5. Trpc
+    6. Prisma
 
 
 **Design inspired by** - https://brianlovin.com/
