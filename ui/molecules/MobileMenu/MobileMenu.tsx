@@ -1,87 +1,101 @@
+import Text from "@/ui/atoms/Text";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import {
   CaretRightIcon,
-  CheckIcon,
-  CropIcon,
-  EyeClosedIcon,
-  EyeOpenIcon,
+  CodeSandboxLogoIcon,
   FileIcon,
-  FrameIcon,
-  GridIcon,
   Link2Icon,
-  MixerHorizontalIcon,
+  MixIcon,
+  Pencil1Icon,
   PersonIcon,
-  TransparencyGridIcon,
+  RocketIcon,
 } from "@radix-ui/react-icons";
 import clsx from "clsx";
-import React, { ReactNode, useState } from "react";
+import Link from "next/link";
+import React, { ReactNode } from "react";
 
 interface RadixMenuItem {
   label: string;
   shortcut?: string;
   icon?: ReactNode;
+  url: string;
 }
 
-interface User {
+interface Socials {
   name: string;
   url?: string;
 }
 
 const generalMenuItems: RadixMenuItem[] = [
   {
-    label: "New File",
+    label: "Home",
     icon: <FileIcon className="mr-2 h-3.5 w-3.5" />,
-    shortcut: "⌘+N",
+    // shortcut: "⌘+N",
+    url: "/",
   },
   {
-    label: "Settings",
-    icon: <MixerHorizontalIcon className="mr-2 h-3.5 w-3.5" />,
-    shortcut: "⌘+,",
-  },
-];
-
-const regionToolMenuItems: RadixMenuItem[] = [
-  {
-    label: "Frame",
-    icon: <FrameIcon className="mr-2 h-3.5 w-3.5" />,
-    shortcut: "⌘+F",
-  },
-  {
-    label: "Crop",
-    icon: <CropIcon className="mr-2 h-3.5 w-3.5" />,
-    shortcut: "⌘+S",
+    label: "Writing",
+    icon: <Pencil1Icon className="mr-2 h-3.5 w-3.5" />,
+    // shortcut: "⌘+,",
+    url: "/writing",
   },
 ];
 
-const users: User[] = [
+const meMenuItems: RadixMenuItem[] = [
   {
-    name: "Adam",
-    url: "https://github.com/adamwathan.png",
+    label: "AMA - Coming Soon",
+    icon: <PersonIcon className="mr-2 h-3.5 w-3.5" />,
+    // shortcut: "⌘+F",
+    url: "/",
   },
   {
-    name: "Steve",
-    url: "https://github.com/steveschoger.png",
+    label: "Stack - Coming Soon",
+    icon: <MixIcon className="mr-2 h-3.5 w-3.5" />,
+    // shortcut: "⌘+S",
+    url: "/",
+  },
+];
+
+const projectMenuItems: RadixMenuItem[] = [
+  {
+    label: "Rental - Coming Soon",
+    icon: <RocketIcon className="mr-2 h-3.5 w-3.5" />,
+    // shortcut: "⌘+F",
+    url: "/",
   },
   {
-    name: "Robin",
-    url: "https://github.com/robinmalfait.png",
+    label: "Coming Soon",
+    icon: <CodeSandboxLogoIcon className="mr-2 h-3.5 w-3.5" />,
+    // shortcut: "⌘+S",
+    url: "/",
+  },
+];
+
+const socials: Socials[] = [
+  {
+    name: "Twitter",
+    url: "https://pbs.twimg.com/profile_images/1529484742630035461/nOF82ixm_400x400.jpg",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://media.licdn.com/dms/image/C4D03AQFeU-Zqi8kR3A/profile-displayphoto-shrink_200_200/0/1651513903759?e=1681344000&v=beta&t=EQTBbWhvOUvnHZfIT6oaiKmx_j1FyNIl8W0xMpKSHSU",
+  },
+  {
+    name: "Github",
+    url: "https://github.com/smiley-geek.png",
   },
 ];
 
 interface DropdownMenuProps {}
 
-const DropdownMenu = (props: DropdownMenuProps) => {
-  const [showGrid, setShowGrid] = useState(false);
-  const [showUi, setShowUi] = useState(false);
-
+const MobileMenu = (props: DropdownMenuProps) => {
   return (
     <div className="relative inline-block text-left">
       <DropdownMenuPrimitive.Root>
         <DropdownMenuPrimitive.Trigger asChild>
           <svg
-            width="15"
-            height="15"
             viewBox="0 0 15 15"
+            className="h-6 w-6"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -96,15 +110,16 @@ const DropdownMenu = (props: DropdownMenuProps) => {
 
         <DropdownMenuPrimitive.Portal>
           <DropdownMenuPrimitive.Content
-            align="end"
+            align="start"
             sideOffset={5}
+            side="bottom"
             className={clsx(
               "radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
-              "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
-              "bg-white dark:bg-gray-800"
+              "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56 border border-text-secondary",
+              "bg-background-primary  "
             )}
           >
-            {generalMenuItems.map(({ label, icon, shortcut }, i) => (
+            {generalMenuItems.map(({ label, icon, shortcut, url }, i) => (
               <DropdownMenuPrimitive.Item
                 key={`${label}-${i}`}
                 className={clsx(
@@ -113,72 +128,20 @@ const DropdownMenu = (props: DropdownMenuProps) => {
                 )}
               >
                 {icon}
-                <span className="flex-grow text-gray-700 dark:text-gray-300">
-                  {label}
-                </span>
+                <Link passHref href={url}>
+                  <Text text={label} />
+                </Link>
                 {shortcut && <span className="text-xs">{shortcut}</span>}
               </DropdownMenuPrimitive.Item>
             ))}
 
             <DropdownMenuPrimitive.Separator className="my-1 h-px bg-gray-200 dark:bg-gray-700" />
 
-            <DropdownMenuPrimitive.CheckboxItem
-              checked={showGrid}
-              onCheckedChange={(state) => {
-                if (state !== "indeterminate") {
-                  setShowGrid(state);
-                }
-              }}
-              className={clsx(
-                "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
-                "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
-              )}
-            >
-              {showGrid ? (
-                <GridIcon className="mr-2 h-4 w-4" />
-              ) : (
-                <TransparencyGridIcon className="mr-2 h-3.5 w-3.5 text-gray-700 dark:text-gray-300" />
-              )}
-              <span className="flex-grow text-gray-700 dark:text-gray-300">
-                Show Grid
-              </span>
-              <DropdownMenuPrimitive.ItemIndicator>
-                <CheckIcon className="h-3.5 w-3.5" />
-              </DropdownMenuPrimitive.ItemIndicator>
-            </DropdownMenuPrimitive.CheckboxItem>
-
-            <DropdownMenuPrimitive.CheckboxItem
-              checked={showUi}
-              onCheckedChange={(state) => {
-                if (state !== "indeterminate") {
-                  setShowUi(state);
-                }
-              }}
-              className={clsx(
-                "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
-                "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
-              )}
-            >
-              {showUi ? (
-                <EyeOpenIcon className="mr-2 h-3.5 w-3.5" />
-              ) : (
-                <EyeClosedIcon className="mr-2 h-3.5 w-3.5" />
-              )}
-              <span className="flex-grow text-gray-700 dark:text-gray-300">
-                Show UI
-              </span>
-              <DropdownMenuPrimitive.ItemIndicator>
-                <CheckIcon className="h-3.5 w-3.5" />
-              </DropdownMenuPrimitive.ItemIndicator>
-            </DropdownMenuPrimitive.CheckboxItem>
-
-            <DropdownMenuPrimitive.Separator className="my-1 h-px bg-gray-200 dark:bg-gray-700" />
-
             <DropdownMenuPrimitive.Label className="select-none px-2 py-2 text-xs text-gray-700 dark:text-gray-200">
-              Region Tools
+              Me
             </DropdownMenuPrimitive.Label>
 
-            {regionToolMenuItems.map(({ label, icon, shortcut }, i) => (
+            {meMenuItems.map(({ label, icon, shortcut, url }, i) => (
               <DropdownMenuPrimitive.Item
                 key={`${label}-${i}`}
                 className={clsx(
@@ -187,9 +150,33 @@ const DropdownMenu = (props: DropdownMenuProps) => {
                 )}
               >
                 {icon}
-                <span className="flex-grow text-gray-700 dark:text-gray-300">
-                  {label}
-                </span>
+                <Link passHref href={url}>
+                  <Text text={label} />
+                </Link>
+
+                {shortcut && <span className="text-xs">{shortcut}</span>}
+              </DropdownMenuPrimitive.Item>
+            ))}
+
+            <DropdownMenuPrimitive.Separator className="my-1 h-px bg-gray-200 dark:bg-gray-700" />
+
+            <DropdownMenuPrimitive.Label className="select-none px-2 py-2 text-xs text-gray-700 dark:text-gray-200">
+              Projects
+            </DropdownMenuPrimitive.Label>
+
+            {projectMenuItems.map(({ label, icon, shortcut, url }, i) => (
+              <DropdownMenuPrimitive.Item
+                key={`${label}-${i}`}
+                className={clsx(
+                  "flex cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
+                  "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
+                )}
+              >
+                {icon}
+
+                <Link passHref href={url}>
+                  <Text text={label} />
+                </Link>
                 {shortcut && <span className="text-xs">{shortcut}</span>}
               </DropdownMenuPrimitive.Item>
             ))}
@@ -205,7 +192,7 @@ const DropdownMenu = (props: DropdownMenuProps) => {
               >
                 <Link2Icon className="mr-2 h-3.5 w-3.5" />
                 <span className="flex-grow text-gray-700 dark:text-gray-300">
-                  Share
+                  Socials
                 </span>
                 <CaretRightIcon className="h-3.5 w-3.5" />
               </DropdownMenuPrimitive.SubTrigger>
@@ -213,11 +200,11 @@ const DropdownMenu = (props: DropdownMenuProps) => {
                 <DropdownMenuPrimitive.SubContent
                   className={clsx(
                     "origin-radix-dropdown-menu radix-side-right:animate-scale-in",
-                    "w-full rounded-md px-1 py-1 text-xs shadow-md",
-                    "bg-white dark:bg-gray-800"
+                    "w-full rounded-md px-1 py-1 text-xs shadow-md border border-text-secondary",
+                    "bg-background-primary"
                   )}
                 >
-                  {users.map(({ name, url }, i) => (
+                  {socials.map(({ name, url }, i) => (
                     <DropdownMenuPrimitive.Item
                       key={`${name}-${i}`}
                       className={clsx(
@@ -233,9 +220,7 @@ const DropdownMenu = (props: DropdownMenuProps) => {
                       ) : (
                         <PersonIcon className="mr-2.5 h-6 w-6" />
                       )}
-                      <span className="text-gray-700 dark:text-gray-300">
-                        {name}
-                      </span>
+                      <Text text={name} />
                     </DropdownMenuPrimitive.Item>
                   ))}
                 </DropdownMenuPrimitive.SubContent>
@@ -248,4 +233,4 @@ const DropdownMenu = (props: DropdownMenuProps) => {
   );
 };
 
-export { DropdownMenu };
+export default MobileMenu;

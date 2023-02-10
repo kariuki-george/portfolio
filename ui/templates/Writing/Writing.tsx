@@ -1,22 +1,21 @@
-import Header from "@/ui/molecules/Header";
 import MidNav from "@/ui/molecules/MidNav/MidNav";
+import WritingGroupModal from "@/ui/organisms/WritingGroupModal";
+import { cva } from "cva";
 import React from "react";
-import { DropdownMenu } from "./jjjj";
+
+const bodyStyles = cva("w-full ");
 
 const WriteMenu = () => {
   return (
-    <div className="">
-      <MidNav
-        headerProps={{
-          text: "Writing",
-          icon: <DropdownMenu />,
-        }}
-      >
-        <>
-          <Header text="one" hovable={true} />
-          <Header text="one" hovable={true} />
-          <Header text="one" hovable={true} />
-        </>
+    <div className="w-full  ">
+      <MidNav headerText="Writing">
+        <ul className={bodyStyles()}>
+          {[1, 2].map((item, index) => (
+            <li key={index}>
+              <WritingGroupModal text={item.toString()} />
+            </li>
+          ))}
+        </ul>
       </MidNav>
     </div>
   );

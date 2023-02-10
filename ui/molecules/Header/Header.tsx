@@ -8,7 +8,7 @@ const headerProps = cva(
   clsx(
     "text-text-primary w-full",
     "my-1 p-1 px-3 rounded-md",
-    "flex items-center gap-3"
+    "flex items-center gap-3 "
   ),
   {
     variants: {

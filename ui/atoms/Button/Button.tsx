@@ -1,7 +1,12 @@
 import { cva, VariantProps } from "cva";
+import clsx from "clsx";
 
 const buttonStyles = cva(
-  "flex items-center justify-center px-4  py-2 focus:outline-none focus:ring-2",
+  clsx(
+    "flex items-center justify-center px-4  py-1 focus:outline-none focus:ring-2",
+    "border border-text-secondary rounded-md",
+    "bg-background-secondary hover:bg-background-tertiary"
+  ),
   {
     variants: {
       intent: {
@@ -24,9 +29,11 @@ export type ButtonProps = VariantProps<typeof buttonStyles> & {
 };
 
 const Button = ({ text, fullWidth, intent, ...props }: ButtonProps) => {
-  <button className={buttonStyles({ intent, fullWidth })} {...props}>
-    {text}
-  </button>;
+  return (
+    <button className={buttonStyles({ intent, fullWidth })} {...props}>
+      {text}
+    </button>
+  );
 };
 
 export default Button;
