@@ -1,16 +1,8 @@
-import { trpc } from "@/utils/trpc";
+import React from "react";
+import Home from "@/ui/templates/Home";
 
-export default function IndexPage() {
-  const hello = trpc.notes.get.useQuery();
-  // console.log(hello.data);
+const HomePage = () => {
+  return <Home />;
+};
 
-  if (!hello.data) {
-    return <div>Loading...</div>;
-  }
-
-  return (
-    <div>
-      <p>{JSON.stringify(hello.data[0])}</p>
-    </div>
-  );
-}
+export default HomePage;
