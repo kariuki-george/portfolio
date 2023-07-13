@@ -3,12 +3,28 @@ import Image from "next/image";
 import React from "react";
 
 const Projects: NextPage = () => {
+  const projects: IProject[] = [
+    {
+      name: "Intercom/ Tawk.to Clone",
+      imgUrl:
+        "https://res.cloudinary.com/smiley-geek/image/upload/v1689241224/gzvfrwwfd9h3u8zm3roi.png",
+      link: "https://comms.p.kariukigeorge.me/",
+    },
+
+    {
+      name: "cat wiki",
+      imgUrl:
+        "https://res.cloudinary.com/smiley-geek/image/upload/v1651413042/oukhdzok0msluuhnxlfi.png",
+      link: "https://catwikibythuo.vercel.app",
+    },
+  ];
+
   return (
-    <div id="projects"  className=" w-full p-5 flex flex-col items-center">
+    <div id="projects" className=" w-full p-5 flex flex-col items-center">
       <section className="text-4xl my-5 underline  decoration-green-brand/40 decoration-wavy">
         previous work
       </section>
-      <section className="w-full flex sm:flex-col md:flex-row md:flex-wrap items-center justify-center my-5">
+      <section className="w-full flex sm:flex-col md:flex-row gap-2 md:flex-wrap items-center justify-center my-5">
         {projects.map((project) => (
           <a
             href={project.link}
@@ -35,11 +51,8 @@ const Projects: NextPage = () => {
 
 export default Projects;
 
-const projects = [
-  {
-    name: "cat wiki",
-    imgUrl:
-      "https://res.cloudinary.com/smiley-geek/image/upload/v1651413042/oukhdzok0msluuhnxlfi.png",
-    link: "https://catwikibythuo.vercel.app",
-  },
-];
+interface IProject {
+  name: string;
+  imgUrl: string;
+  link: string;
+}
