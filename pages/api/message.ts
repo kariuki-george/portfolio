@@ -25,7 +25,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
   });
 
   const mailData = {
-    from: req.body.email,
+    from: process.env.from,
     to: "kariukigeorge2030@gmail.com",
     subject: `Portfolio ${req.body.subject} :Message By ${req.body.firstName} ${req.body.lastName}`,
     text: req.body.message + " | Sent from: " + req.body.email,
