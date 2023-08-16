@@ -41,6 +41,15 @@ export default function CommandBar(props: {
       icon: <Icon type="ri-file-copy-line" />,
     },
     {
+      id: "blog",
+      name: "Read Blog",
+      shortcut: ["b"],
+      keywords: "read-blog",
+      section: "General",
+      perform: () => window.open("https://blog.kariukigeorge.me/", "_blank"),
+      icon: <Icon type="ri-braces-line" />,
+    },
+    {
       id: "email",
       name: "Send Email",
       shortcut: ["e"],
