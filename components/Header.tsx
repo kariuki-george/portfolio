@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import React from "react";
 import { FaHamburger } from "react-icons/fa";
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useKBar } from "kbar";
 
 const Header: NextPage = () => {
@@ -32,4 +32,3 @@ const Header: NextPage = () => {
 };
 
 export default Header;
-

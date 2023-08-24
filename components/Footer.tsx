@@ -8,14 +8,14 @@ const Footer: NextPage = () => {
     window.scroll({ top: 0, behavior: "smooth" });
   };
   return (
-    <div className="w-full flex justify-between p-10 my-10  items-center  ">
+    <div className="w-full text-green-brand flex justify-between p-10 my-10  items-center  ">
       <Link href="/" passHref>
         <span className="text-2xl hover:cursor-pointer">thuo</span>
       </Link>
-      <span>&copy; 2022 thuo.</span>
+      <span>&copy; 2023 </span>
       <span
         onClick={handleTop}
-        className="text-green-brand bg-green-brand/5 rounded border p-2 hover:text-white hover:cursor-pointer"
+        className=" bg-green-brand/5 rounded border p-2 hover:text-white hover:cursor-pointer"
       >
         <BsArrowUp />
       </span>

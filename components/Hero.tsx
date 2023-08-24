@@ -1,40 +1,50 @@
 import { NextPage } from "next";
 import React from "react";
-import Image from "next/legacy/image";
-import Link from "next/link";
+import Image from "next/image";
+import { Button } from "./ui/button";
 
 const Hero: NextPage = () => {
+  const handleScroll = () => {
+    window.scroll({ top: 0, behavior: "smooth" });
+  };
   return (
-    <div className="flex w-full sm:flex-col min-h-screen md:flex-row items-center justify-center md:justify-start  relative  p-5 py-4">
-      <section className="sm:inline md:hidden m-3 my-10  h-[200px]   w-full relative">
+    <div className="flex w-full flex-col min-h-screen md:flex-row items-center justify-center md:justify-start  relative  p-5 py-4">
+      <section className=" flex md:hidden m-3 my-10  h-[200px]   w-full relative">
         <Image
-          layout="fill"
-          objectFit="fill"
           src="/heropage.svg"
           alt="hero image"
           priority
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "fill",
+          }}
         />
       </section>
       <section className="w-full flex flex-col items-center  md:items-start lg:items-center md:w-1/2">
-        <span className="text-5xl sm:text-4xl">
+        <span className="text-5xl md:text-4xl">
           I&apos;m Kariuki <span className="text-green-brand">George</span>
         </span>
 
         <p className="text-xl">
           Fullstack web developer, optimist and technophile
         </p>
-        <Link href="#contacts" passHref>
-          <button className="w-2/3   my-10 text-green-brand  h-10 rounded border-green-brand border hover:bg-green-brand/5 hover:text-white">
+
+        <a href="#contacts" className="w-full flex justify-center">
+          <Button className="w-2/3  my-10" variant={"outline"}>
             let&apos;s build something great
-          </button>
-        </Link>
+          </Button>
+        </a>
       </section>
-      <section className=" pb-4 sm:hidden md:flex w-2/3 absolute right-0   h-full justify-center ">
+      <section className=" pb-4 hidden md:flex w-2/3 absolute right-0   h-full justify-center ">
         <Image
-          layout="fill"
-          objectFit="fill"
           src="/heropage.svg"
           alt="hero image"
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "fill",
+          }}
         />
       </section>
     </div>

@@ -1,16 +1,20 @@
+"use client";
+
 // All code for this component was copied from this repository: https://github.com/zenorocha/zenorocha.com/blob/master/components/CommandBar.js
 // Author: Zeno Rocha
 import * as React from "react";
-import { useRouter } from "next/router";
-import {
+import { useRouter } from "next/navigation";
+import Kbar from "./kbar/kbar-client";
+
+const {
   KBarAnimator,
-  KBarProvider,
   KBarPortal,
-  useDeepMatches,
+  useMatches,
   KBarPositioner,
   KBarSearch,
   KBarResults,
-} from "kbar";
+  KBarProvider,
+} = Kbar;
 
 export default function CommandBar(props: {
   children:
@@ -75,7 +79,7 @@ export default function CommandBar(props: {
       shortcut: ["g", "h"],
       keywords: "go-home",
       section: "Go To",
-      perform: () => router.push("/"),
+      perform: () => router.push("/", { scroll: true }),
       icon: <Icon type="ri-home-5-line" />,
     },
     {
@@ -84,25 +88,17 @@ export default function CommandBar(props: {
       shortcut: ["g", "a"],
       keywords: "go-about",
       section: "Go To",
-      perform: () => router.push("#about"),
+      perform: () => router.push("#about", { scroll: true }),
       icon: <Icon type="ri-user-line" />,
     },
-    {
-      id: "skills",
-      name: "Skills",
-      shortcut: ["g", "s"],
-      keywords: "go-skills",
-      section: "Go To",
-      perform: () => router.push("#skills"),
-      icon: <Icon type="ri-user-line" />,
-    },
+
     {
       id: "projects",
       name: "Project",
       shortcut: ["g", "p"],
       keywords: "go-project",
       section: "Go To",
-      perform: () => router.push("#projects"),
+      perform: () => router.push("#projects", { scroll: true }),
       icon: <Icon type="ri-user-line" />,
     },
 
@@ -148,14 +144,14 @@ export default function CommandBar(props: {
 }
 
 function RenderResults() {
-  const { results } = useDeepMatches();
+  const { results } = useMatches();
 
   return (
     <KBarResults
       items={results}
       onRender={({ item, active }) =>
         typeof item === "string" ? (
-          <div className="px-[8px] py-[16px] text-[10px] ">{item}</div>
+          <div className="px-[8px] py-[16px] text-[10px] ">{item} </div>
         ) : (
           <ResultItem action={item} active={active} />
         )
@@ -207,12 +203,12 @@ const actionStyle = {
 const getResultStyle = (active: any) => {
   return {
     padding: "12px 16px",
-    background: active ? "rgba(255, 255, 255, 0.1)" : "var(--commandColor)",
+    background: active ? "rgba(255, 255, 255, 0.1)" : "var(--commandColor) ",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
     margin: 0,
     cursor: "pointer",
-    color: active ? "var(--primaryColor)" : "var(--secondaryColor)",
+    color: active ? "#77FF94" : "var(--secondaryColor)",
   };
 };

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { FiTwitter } from "react-icons/fi";
 import { BsInstagram } from "react-icons/bs";
@@ -6,6 +8,7 @@ import { AiOutlineMail, AiOutlineLinkedin } from "react-icons/ai";
 
 import toast from "react-hot-toast";
 import axios from "axios";
+import { Button } from "./ui/button";
 
 const Contacts = () => {
   const [firstName, setFirstName] = useState<string>("");
@@ -21,16 +24,13 @@ const Contacts = () => {
       return toast.error("please fill all fields");
     }
     setLoading(true);
-    const res = await axios.post(
-      "/api/message",
-      {
-        firstName,
-        lastName,
-        email,
-        subject,
-        message,
-      }
-    );
+    const res = await axios.post("/api/message", {
+      firstName,
+      lastName,
+      email,
+      subject,
+      message,
+    });
     setLoading(false);
     if (res.data.error) {
       toast.error(res.data.message);
@@ -48,7 +48,7 @@ const Contacts = () => {
   }, [loading]);
 
   return (
-    <div id="contacts" className="my-5 p-5 flex flex-col items-center">
+    <div id="contacts" className="my-20 p-5 flex flex-col items-center">
       <section className="text-3xl underline decoration-wavy decoration-green-brand/40 mb-10">
         let&apos;s talk
       </section>
@@ -64,7 +64,7 @@ const Contacts = () => {
           <span className="text-3xl my-3">get in touch</span>
           <section>
             <form
-              className="flex flex-col sm:max-w-[350px] max-w-[600px]  "
+              className="flex flex-col border p-3 rounded-sm  sm:max-w-[350px] max-w-[600px]  "
               onSubmit={() => {}}
             >
               <input
@@ -73,12 +73,12 @@ const Contacts = () => {
                 onChange={(e) => {
                   setFirstName(e.target.value);
                 }}
-                className="p-2 active:p-1 text-center active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  "
+                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  "
                 placeholder="First Name"
               />
               <input
                 type="text"
-                className="p-2 active:p-1 text-center active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  "
+                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  "
                 placeholder="Last Name"
                 value={lastName}
                 onChange={(e) => {
@@ -87,7 +87,7 @@ const Contacts = () => {
               />
               <input
                 type="email"
-                className="p-2 active:p-1 text-center active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  "
+                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  "
                 placeholder="Email Address"
                 value={email}
                 onChange={(e) => {
@@ -96,7 +96,7 @@ const Contacts = () => {
               />
               <input
                 type="text"
-                className="p-2 active:p-1 text-center active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  "
+                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  "
                 placeholder="Subject"
                 value={subject}
                 onChange={(e) => {
@@ -104,20 +104,20 @@ const Contacts = () => {
                 }}
               />
               <textarea
-                className="p-2 active:p-1 text-center active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  resize-y h-[100px]"
+                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  resize-y h-[100px]"
                 placeholder="Your message"
                 value={message}
                 onChange={(e) => {
                   setMessage(e.target.value);
                 }}
               />
-              <button
-                className="border p-2 text-xl text-green-brand rounded bg-green-brand/5 hover:text-white"
+              <Button
                 onClick={handleSubmit}
                 disabled={false}
+                variant={"outline"}
               >
                 {loading ? "sending..." : "send message"}
-              </button>
+              </Button>
             </form>
           </section>
           <span className="text-xl my-7">or</span>
