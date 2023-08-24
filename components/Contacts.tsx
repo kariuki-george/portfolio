@@ -145,7 +145,7 @@ const Contacts = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://github.com/smiley-geek"
+                href="https://github.com/kariuki-george"
               >
                 <FiGithub />
               </a>

@@ -9,7 +9,7 @@ const Global: NextPage<Props> = ({ children }) => {
   return (
     <div className="w-screen bg-black ">
       <Head>
-        <title>smiley-geek</title>
+        <title>Kariuki George</title>
         <meta
           name="description"
           content="This is a portfolio for Kariuki George Thuo"

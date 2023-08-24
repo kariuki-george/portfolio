@@ -6,16 +6,11 @@ const index = () => {
   return (
     <div className="  bg-transpatent text-black-500   ">
       <section className="max-w-[1100px]   m-auto bg-transparent">
-      <About />
-      <Skills />
-    
+        <About />
+        {/* <Skills /> */}
       </section>
-    
     </div>
   );
 };
 
-
 export default index;
-
-

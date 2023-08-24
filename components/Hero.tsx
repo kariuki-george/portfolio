@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import React from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 
 const Hero: NextPage = () => {
@@ -20,7 +20,9 @@ const Hero: NextPage = () => {
           I&apos;m Kariuki <span className="text-green-brand">George</span>
         </span>
 
-        <p className="text-xl">Freelance fullstack web developer</p>
+        <p className="text-xl">
+          Fullstack web developer, optimist and technophile
+        </p>
         <Link href="#contacts" passHref>
           <button className="w-2/3   my-10 text-green-brand  h-10 rounded border-green-brand border hover:bg-green-brand/5 hover:text-white">
             let&apos;s build something great

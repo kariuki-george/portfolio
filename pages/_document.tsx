@@ -4,14 +4,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <script
-            async
-            src="https://ackee.p.kariukigeorge.me/tracker.js"
-            data-ackee-server="https://ackee.p.kariukigeorge.me"
-            data-ackee-domain-id="f7cb3d78-c173-4c08-a4b8-9a9fbc418d65"
-          ></script>
-        </Head>
+        <Head></Head>
         <body className="bg-black-500 max-w-screen overflow-x-hidden ">
           <Main />
           <NextScript />
