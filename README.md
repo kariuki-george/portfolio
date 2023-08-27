@@ -5,15 +5,15 @@
 <h1 align="center">Hi 👋, I'm George🫣</h1>
 <h3 align="center">A passionate fullstack developer from Kenya🇰🇪</h3>
 
-- 🌱 I’m currently learning **GraphQL Nexus**
+- 🌱 I’m currently learning **Rust**
 
-- 👨‍💻 All of my projects are available at [smiley-geek-codes.tech](https://smiley-geek-codes.tech)
+- 👨‍💻 All of my projects are available at [kariukigeorge.me](https://kariukigeorge.me)
 
-- ❓ Ask me about **fullstack dev/ nginx/ docker/ serverless apps**
+- ❓ Ask me about **fullstack dev/ kafka/ docker/ serverless apps**
 
 - 📫 How to reach me **kariukigeorge2030@gmail.com**
 
-- 📄 Know about my experiences [smiley-geek-codes.tech](https://smiley-geek-codes.tech)
+- 📄 Know about my experiences [kariukigeorge.me](https://kariukigeorge.me)
 
 - ⚡ Fun fact: I use tabs over spaces
 
