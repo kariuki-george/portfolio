@@ -4,9 +4,6 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 
 const Hero: NextPage = () => {
-  const handleScroll = () => {
-    window.scroll({ top: 0, behavior: "smooth" });
-  };
   return (
     <div className="flex w-full flex-col min-h-screen md:flex-row items-center justify-center md:justify-start  relative  p-5 py-4">
       <section className=" flex md:hidden m-3 my-10  h-[200px]   w-full relative">
@@ -22,11 +19,11 @@ const Hero: NextPage = () => {
         />
       </section>
       <section className="w-full flex flex-col items-center  md:items-start lg:items-center md:w-1/2">
-        <span className="text-5xl md:text-4xl">
+        <span className="text-2xl md:text-4xl">
           I&apos;m Kariuki <span className="text-green-brand">George</span>
         </span>
 
-        <p className="text-xl">
+        <p className="text-lg">
           Fullstack web developer, optimist and technophile
         </p>
 

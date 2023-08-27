@@ -52,10 +52,13 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   const res: HashNodeProps = await getHashData();
-  return { props: res };
+  return {
+    props: res,
+    revalidate: 60 * 60 * 12, // EVERY HALF A DAY
+  };
 };
 
-const getHashData = async () => {
+const getHashData = async (): Promise<HashNodeProps> => {
   const query = `query BlogData {
   user(username: "kariukigeorge") {
      photo
@@ -80,12 +83,21 @@ const getHashData = async () => {
       { headers: { "Content-Type": "application/json" } }
     );
     if (response.status === 200) {
-      console.log("GraphQL Response:", response.data);
-      return response.data.data;
+      return response.data.data as HashNodeProps;
     } else {
       console.error("GraphQL Request Failed");
     }
   } catch (error) {
     console.error("GraphQL Request Failed");
   }
+  return {
+    user: {
+      numFollowers: 10,
+      photo:
+        "https://cdn.hashnode.com/res/hashnode/image/upload/v1691341772043/b81414dd-0790-4d85-a58f-17580026efe1.jpeg?w=400&h=400&fit=crop&crop=faces&auto=compress,format&format=webp",
+      publication: {
+        posts: [],
+      },
+    },
+  };
 };

@@ -11,7 +11,6 @@ interface Props {
 }
 
 const About: NextPage<Props> = ({ data }: Props) => {
-  console.log(data, "Popi");
   return (
     <div className="  bg-transpatent text-black-500   ">
       <section className="max-w-[1100px]   m-auto bg-transparent">
@@ -93,6 +92,7 @@ const About: NextPage<Props> = ({ data }: Props) => {
               <a
                 href={"https://blog.kariukigeorge.me/" + post.slug}
                 target="_blank"
+                key={post.slug}
               >
                 <Card>
                   <CardContent className="flex items-center justify-between  h-full gap-3">

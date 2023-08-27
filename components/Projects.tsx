@@ -4,15 +4,13 @@ import React from "react";
 import { Badge } from "./ui/badge";
 
 const Projects: NextPage = () => {
-  
-
   return (
-    <div id="projects" className=" w-full p-5 flex flex-col items-center">
+    <div id="projects" className=" w-full p-5 flex flex-col items-center ">
       <section className="text-4xl my-20 underline  decoration-green-brand decoration-wavy">
         previous work
       </section>
 
-      <article className="flex flex-col gap-10">
+      <article className="flex flex-col gap-10 w-full">
         <section className="flex flex-col gap-3 border-b p-3 ">
           <h2 className="text-lg text-green-brand font-semibold">
             Senior Frontend Developer - Sellhustle
@@ -33,7 +31,7 @@ const Projects: NextPage = () => {
             but also working with a team, conceiving and discussing ideas, time
             management and finally putting all that into code.
           </span>
-          <span className="flex gap-2">
+          <span className="flex gap-2 flex-wrap">
             <Badge className="hover:text-green-brand">NextJs</Badge>
             <Badge className="hover:text-green-brand">TailwindCss/ SCSS</Badge>
             <Badge className="hover:text-green-brand">Flutterwave</Badge>
@@ -63,7 +61,7 @@ const Projects: NextPage = () => {
             <br />
             4. Data cleaning and processing
           </span>
-          <span className="flex gap-2">
+          <span className="flex gap-2 flex-wrap">
             <Badge>NextJs/ Vue</Badge>
             <Badge>TailwindCss/ ShadCn</Badge>
             <Badge>NestJs</Badge>
@@ -77,13 +75,13 @@ const Projects: NextPage = () => {
       <section className="text-4xl my-20 underline  decoration-green-brand decoration-wavy">
         other projects
       </section>
-      <article className="flex flex-col gap-10">
+      <article className="flex flex-col gap-10 w-full">
         <a href={"https://comms.p.kariukigeorge.me/"} target="_blank">
           <section className="flex flex-col gap-3 border-b p-3 ">
             <h2 className="text-lg text-green-brand font-semibold">
               Comms chat provider
             </h2>
-            <section className="flex gap-6">
+            <section className="flex  flex-col items-center  md:flex-row  gap-6">
               <aside className="h-full w-1/3">
                 <Image
                   alt="Comms image"
@@ -92,7 +90,7 @@ const Projects: NextPage = () => {
                   width={200}
                 />
               </aside>
-              <main className="h-full    flex flex-col gap-3">
+              <main className="h-full  w-full  flex flex-col gap-3">
                 <span className="flex gap-2">
                   <Badge className="hover:text-green-brand">Intercom</Badge>
                   <Badge className="hover:text-green-brand">Tawk.to</Badge>
@@ -106,7 +104,7 @@ const Projects: NextPage = () => {
                   resources - leading to happier customers and more efficient
                   support teams.
                 </span>
-                <span className="flex gap-2">
+                <span className="flex gap-2 flex-wrap">
                   <Badge>NextJs</Badge>
                   <Badge>TailwindCss/ ShadCn</Badge>
                   <Badge>NestJs</Badge>
@@ -148,7 +146,7 @@ const Projects: NextPage = () => {
                   3. Track coworkers leaves.
                   <br />
                 </span>
-                <span className="flex gap-2">
+                <span className="flex gap-2 flex-wrap">
                   <Badge>NextJs</Badge>
                   <Badge>TailwindCss/ ShadCn</Badge>
                   <Badge>NestJs</Badge>
