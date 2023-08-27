@@ -76,7 +76,11 @@ const Projects: NextPage = () => {
         other projects
       </section>
       <article className="flex flex-col gap-10 w-full">
-        <a href={"https://comms.p.kariukigeorge.me/"} target="_blank">
+        <a
+          href={"https://comms.p.kariukigeorge.me/"}
+          target="_blank"
+          rel="noreferrer"
+        >
           <section className="flex flex-col gap-3 border-b p-3 ">
             <h2 className="text-lg text-green-brand font-semibold">
               Comms chat provider
@@ -117,7 +121,11 @@ const Projects: NextPage = () => {
             </section>
           </section>
         </a>
-        <a href={"https://lms-web.p.kariukigeorge.me/"} target="_blank">
+        <a
+          href={"https://lms-web.p.kariukigeorge.me/"}
+          target="_blank"
+          rel="noreferrer"
+        >
           <section className="flex flex-col gap-3 border-b p-3 ">
             <h2 className="text-lg text-green-brand font-semibold">
               Leave Management System

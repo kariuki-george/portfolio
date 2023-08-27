@@ -19,11 +19,12 @@ const About: NextPage<Props> = ({ data }: Props) => {
           className="pt-2 mb-10 p-10 w-full md:w-3/4 m-auto gap-3 flex flex-col items-center justify-center"
         >
           <p className="w-full mt-20 text-lg mb-5 ">
-            I'm a fullstack web developer and Rust enthusiast. I'm currently
-            enrolled at{" "}
+            I&apos;m a fullstack web developer and Rust enthusiast. I&apos;m
+            currently enrolled at{" "}
             <a
               href="https://jkuat.ac.ke/"
               target="_blank"
+              rel="noreferrer"
               className="decoration-wavy underline italic decoration-green-brand"
             >
               JKUAT
@@ -39,7 +40,11 @@ const About: NextPage<Props> = ({ data }: Props) => {
           </p>
           <span className="w-full flex justify-between  flex-col sm:flex-row gap-3">
             <span className="w-full h-full">
-              <a href="https://twitter.com/_kariuki_george" target="_blank">
+              <a
+                href="https://twitter.com/_kariuki_george"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Card>
                   <CardContent className="flex  truncate items-center gap-3 py-3 h-full rounded-sm ">
                     <Image
@@ -63,7 +68,11 @@ const About: NextPage<Props> = ({ data }: Props) => {
               </a>{" "}
             </span>
             <span className="w-full h-full">
-              <a href="https://blog.kariukigeorge.me" target="_blank">
+              <a
+                href="https://blog.kariukigeorge.me"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Card>
                   <CardContent className="flex  truncate items-center gap-3 py-3 h-full rounded-sm ">
                     <Image
@@ -75,7 +84,7 @@ const About: NextPage<Props> = ({ data }: Props) => {
                     />
                     <aside className="flex p-2 flex-col gap-3 justify-center h-full ">
                       <span className="truncate font-semibold">
-                        @George's blog
+                        @George&apos;s blog
                       </span>
                       <span>{data?.user?.numFollowers} followers</span>
                     </aside>
@@ -92,6 +101,7 @@ const About: NextPage<Props> = ({ data }: Props) => {
               <a
                 href={"https://blog.kariukigeorge.me/" + post.slug}
                 target="_blank"
+                rel="noreferrer"
                 key={post.slug}
               >
                 <Card>

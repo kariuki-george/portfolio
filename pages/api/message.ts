@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 require("dotenv").config();
 
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
   // Validate body
   const { firstName, lastName, email, subject, message } = req.body;
   if (!(firstName && lastName && email && subject && message)) {
@@ -48,4 +48,6 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
       message: "An error occurred while sending the message!",
     });
   }
-}
+};
+
+export default sendEmail;
