@@ -122,7 +122,7 @@ const Projects: NextPage = () => {
           </section>
         </a>
         <a
-          href={"https://lms-web.p.kariukigeorge.me/"}
+          href={"https://lms.p.kariukigeorge.me/"}
           target="_blank"
           rel="noreferrer"
         >
