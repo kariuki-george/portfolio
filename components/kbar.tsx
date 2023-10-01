@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 "use client";
 
 // All code for this component was copied from this repository: https://github.com/zenorocha/zenorocha.com/blob/master/components/CommandBar.js
