@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 "use client";
 
 // All code for this component was copied from this repository: https://github.com/zenorocha/zenorocha.com/blob/master/components/CommandBar.js
@@ -172,7 +173,7 @@ const ResultItem = React.forwardRef(
         </div>
         {action.shortcut?.length ? (
           <div aria-hidden style={shortcutStyle}>
-            {action.shortcut.map((shortcut: React.Key | null | undefined) => (
+            {action.shortcut.map((shortcut: any) => (
               <kbd key={shortcut} className="px-[4px] py-[8px] ">
                 {shortcut}
               </kbd>
