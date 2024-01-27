@@ -49,7 +49,7 @@ const Contacts = () => {
 
   return (
     <div id="contacts" className="my-20 p-5 flex flex-col items-center">
-      <section className="text-3xl underline decoration-wavy decoration-green-brand/40 mb-10">
+      <section className="text-3xl underline decoration-wavy decoration-green-brand mb-10">
         let&apos;s talk
       </section>
       <section className="flex sm:flex-col md:flex-row items-center ">
@@ -60,11 +60,11 @@ const Contacts = () => {
             alt="man with phone"
           />
         </section>
-        <section className=" flex flex-col items-center p-3 border border-green-brand/10 sm:full md-1/2 ">
+        <section className=" flex flex-col items-center p-3 border border-green-brand/40 rounded-sm sm:full md-1/2 ">
           <span className="text-3xl my-3">get in touch</span>
           <section>
             <form
-              className="flex flex-col border p-3 rounded-sm  sm:max-w-[350px] max-w-[600px]  "
+              className="flex flex-col border p-3 border-green-brand/0 rounded-sm  sm:max-w-[350px] max-w-[600px]  "
               onSubmit={() => {}}
             >
               <input
@@ -73,12 +73,12 @@ const Contacts = () => {
                 onChange={(e) => {
                   setFirstName(e.target.value);
                 }}
-                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  "
+                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400/50 text-xl bg-transparent   "
                 placeholder="First Name"
               />
               <input
                 type="text"
-                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  "
+                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400/50 text-xl bg-transparent  "
                 placeholder="Last Name"
                 value={lastName}
                 onChange={(e) => {
@@ -87,7 +87,7 @@ const Contacts = () => {
               />
               <input
                 type="email"
-                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  "
+                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400/50 text-xl bg-transparent  "
                 placeholder="Email Address"
                 value={email}
                 onChange={(e) => {
@@ -96,7 +96,7 @@ const Contacts = () => {
               />
               <input
                 type="text"
-                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  "
+                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400/50 text-xl bg-transparent  "
                 placeholder="Subject"
                 value={subject}
                 onChange={(e) => {
@@ -104,7 +104,7 @@ const Contacts = () => {
                 }}
               />
               <textarea
-                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400 text-xl bg-transparent border-b  resize-y h-[100px]"
+                className="p-2 active:p-1  active:outline-none outline-none m-3  placeholder:text-green-400/50 text-xl bg-transparent border-b border-green-brand/10  resize-y h-[100px]"
                 placeholder="Your message"
                 value={message}
                 onChange={(e) => {
