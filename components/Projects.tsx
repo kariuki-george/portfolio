@@ -11,20 +11,24 @@ const Projects: NextPage = () => {
       </section>
 
       <article className="flex flex-col gap-10 w-full">
-        {work.map((work) => (
-          <section className="flex flex-col gap-3 border-b p-3 ">
+        {work.map((work, index) => (
+          <section key={index} className="flex flex-col gap-3 border-b p-3 ">
             <h2 className="text-lg text-green-brand font-semibold">
               {work.title}
             </h2>
             <span className="flex gap-2">
-              {work.projectBadges.map((badge) => (
-                <Badge className="hover:text-green-brand">{badge}</Badge>
+              {work.projectBadges.map((badge, index) => (
+                <Badge key={index} className="hover:text-green-brand">
+                  {badge}
+                </Badge>
               ))}
             </span>
             <section>{work.desc}</section>
             <span className="flex gap-2 flex-wrap">
-              {work.techBadges.map((badge) => (
-                <Badge className="hover:text-green-brand">{badge}</Badge>
+              {work.techBadges.map((badge, index) => (
+                <Badge key={index} className="hover:text-green-brand">
+                  {badge}
+                </Badge>
               ))}
             </span>
           </section>
@@ -35,8 +39,8 @@ const Projects: NextPage = () => {
         other projects
       </section>
       <article className="flex flex-col gap-10 w-full">
-        {projects.map((project) => (
-          <a href={project.link} target="_blank" rel="noreferrer">
+        {projects.map((project, index) => (
+          <a key={index} href={project.link} target="_blank" rel="noreferrer">
             <section className="flex flex-col gap-3 border-b p-3 ">
               <h2 className="text-lg text-green-brand font-semibold">
                 {project.title}
@@ -52,14 +56,18 @@ const Projects: NextPage = () => {
                 </aside>
                 <main className="h-full  flex flex-col gap-3">
                   <span className="flex gap-2">
-                    {project.projectBadges.map((badge) => (
-                      <Badge className="hover:text-green-brand">{badge}</Badge>
+                    {project.projectBadges.map((badge, index) => (
+                      <Badge key={index} className="hover:text-green-brand">
+                        {badge}
+                      </Badge>
                     ))}
                   </span>
                   <section>{project.desc}</section>
                   <span className="flex gap-2 flex-wrap">
-                    {project.techBadges.map((badge) => (
-                      <Badge className="hover:text-green-brand">{badge}</Badge>
+                    {project.techBadges.map((badge, index) => (
+                      <Badge key={index} className="hover:text-green-brand">
+                        {badge}
+                      </Badge>
                     ))}
                   </span>
                 </main>

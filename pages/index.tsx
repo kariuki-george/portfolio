@@ -12,13 +12,13 @@ import axios from "axios";
 
 export interface HashNodeProps {
   user: {
-    numFollowers: number;
-    photo: string;
-    publication: {
-      posts: {
+    followersCount: number;
+    profilePicture: string;
+    posts: {
+      nodes: {
         slug: string;
-        dateFeatured?: string;
-        readTime: number;
+        publishedAt?: string;
+        readTimeInMinutes: number;
         title: string;
         views: number;
       }[];
@@ -60,19 +60,19 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const getHashData = async (): Promise<HashNodeProps> => {
   const query = `query BlogData {
-  user(username: "kariukigeorge") {
-     photo
-     numFollowers
-     publication {
-       posts (page: 0){
-        slug
+ user(username: "KariukiGeorge") {
+     profilePicture
+     followersCount
+     posts(pageSize:3,page:1){
+      nodes{
+         slug
         title
-        popularity
+        
         views
-        readTime
-        dateFeatured
+        readTimeInMinutes
+        publishedAt
       }
-     }
+    }     
   }
 }
 `;
@@ -82,21 +82,22 @@ const getHashData = async (): Promise<HashNodeProps> => {
       JSON.stringify({ query }),
       { headers: { "Content-Type": "application/json" } }
     );
+
     if (response.status === 200) {
       return response.data.data as HashNodeProps;
     } else {
       console.error("GraphQL Request Failed");
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error("GraphQL Request Failed");
   }
   return {
     user: {
-      numFollowers: 10,
-      photo:
+      followersCount: 10,
+      profilePicture:
         "https://cdn.hashnode.com/res/hashnode/image/upload/v1691341772043/b81414dd-0790-4d85-a58f-17580026efe1.jpeg?w=400&h=400&fit=crop&crop=faces&auto=compress,format&format=webp",
-      publication: {
-        posts: [],
+      posts: {
+        nodes: [],
       },
     },
   };

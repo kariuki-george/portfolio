@@ -86,7 +86,7 @@ const About: NextPage<Props> = ({ data }: Props) => {
                       <span className="truncate font-semibold">
                         @George&apos;s blog
                       </span>
-                      <span>{data?.user?.numFollowers} followers</span>
+                      <span>{data?.user?.followersCount} followers</span>
                     </aside>
                     <aside>
                       <HiOutlineExternalLink className="hover:text-green-brand w-6 h-6" />
@@ -97,7 +97,7 @@ const About: NextPage<Props> = ({ data }: Props) => {
             </span>{" "}
           </span>
           <article className="w-full flex flex-col gap-3">
-            {data.user.publication.posts.slice(0, 3).map((post) => (
+            {data.user.posts.nodes.slice(0, 3).map((post) => (
               <a
                 href={"https://blog.kariukigeorge.me/" + post.slug}
                 target="_blank"
@@ -112,7 +112,7 @@ const About: NextPage<Props> = ({ data }: Props) => {
                       </span>
                       <span className="flex gap-3">
                         <span>{post.views} views</span>
-                        <span>{post.readTime} minutes</span>
+                        <span>{post.readTimeInMinutes} minutes</span>
                       </span>
                     </aside>
                     <aside>
