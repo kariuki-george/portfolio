@@ -149,13 +149,14 @@ let projects: IProject[] = [
         1. Ping <br />
         2. SET KEY VALUE <br />
         3. GET KEY <br />
+        4. RDB Persistence <br />
       </span>
     ),
     imgAlt: "redis logo",
     imgUrl: "redis.svg",
     link: "https://github.com/kariuki-george/mini-redis",
     projectBadges: ["redis", "redis protocol spec", "async"],
-    techBadges: ["Rust", "Tokio", "Bytes", "Tcp", "Data structures"],
+    techBadges: ["Rust", "Tokio", "Tracing", "Tcp", "Data structures"],
     title: "MiniRedis in Rust",
   },
   {
