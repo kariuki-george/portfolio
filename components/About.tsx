@@ -19,20 +19,19 @@ const About: NextPage<Props> = ({ data }: Props) => {
           className="pt-2 mb-10 p-10 w-full md:w-3/4 m-auto gap-3 flex flex-col items-center justify-center"
         >
           <p className="w-full mt-20 text-lg mb-5 ">
-            I&apos;m a fullstack web developer and Rust enthusiast. I&apos;m
-            currently enrolled at{" "}
+            I&apos;m a software developer (systems and web) and Rust enthusiast.
+            I&apos;m currently passing time at{" "}
             <a
-              href="https://jkuat.ac.ke/"
+              href="https://www.safaricom.co.ke/"
               target="_blank"
               rel="noreferrer"
               className="decoration-wavy underline italic decoration-green-brand"
             >
-              JKUAT
+              Safaricom PLC
             </a>{" "}
-            for a computer science degree (2020-2024).
+            🤭 .
             <br />
-            My current tools of work include TypeScript, Nestjs, Next.js,
-            Graphql, Postgres and more.
+            My current tools of work include Rust, Golang and TypeScript.
             <br /> I create educational content for developers, making the hard
             concepts easier. This comes in the form of blog posts and tweets.
             <br />

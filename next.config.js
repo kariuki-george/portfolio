@@ -5,7 +5,12 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ["res.cloudinary.com", "pbs.twimg.com", "cdn.hashnode.com"],
+    domains: [
+      "res.cloudinary.com",
+      "pbs.twimg.com",
+      "cdn.hashnode.com",
+      "fly.io",
+    ],
   },
 };
 

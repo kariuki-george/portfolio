@@ -52,6 +52,8 @@ const Projects: NextPage = () => {
                     src={project.imgUrl}
                     height={200}
                     width={200}
+                    // Use a cleaner solution
+                    className={index == 0 && "bg-gray-200"}
                   />
                 </aside>
                 <main className="h-full  flex flex-col gap-3">
@@ -86,6 +88,80 @@ let work: IProject[] = [
   {
     desc: (
       <span>
+        At Service Availability, I
+        <br />- Contribute to the development of an in-house observability
+        platform. <br />- Develop rust-powered Ebpf programs for dynamic Linux
+        kernel behavior. <br />- Develop pipelines to ship big data to Kafka and
+        from Kafka to consumers.
+      </span>
+    ),
+    imgAlt: "",
+    imgUrl: "",
+    link: "https://www.safaricom.co.ke/",
+    projectBadges: ["Hybrid", "Nairobi", "April 2024", "Present"],
+    techBadges: ["Rust", "Linux Kernel", "Ebpf", "Kafka", "Clickhouse"],
+    title: "Service Availability Developer Intern - Safaricom PLC",
+  },
+  {
+    desc: (
+      <span>
+        For my last year of Computer Science Degree, I worked with StimaBoda to
+        <br />
+        - Build a smart battery temperature analytics platform.
+        <br />
+        - Integrate with real-time APIs to poll new data from
+        StimaMobility&apos;s Infrastructure.
+        <br />- Integrate with ML APIs to get battery temperature predictions.
+        <br />- Design and build a web platform with dashboards and analytics
+        charts.
+        <br />- Design and build a data aggregation, anomaly detection, and
+        alerting system
+      </span>
+    ),
+    imgAlt: "",
+    imgUrl: "",
+    link: "https://stimaboda.com/",
+    projectBadges: ["University Project", "Nairobi", "Sept 2023", "April 2024"],
+    techBadges: [
+      "NextJs,",
+      "TailwindCss/ SCSS",
+      "Golang",
+      "Machine Learning",
+      "Api Integration",
+      "Chartjs",
+    ],
+    title: "Software Developer - Stima Mobility",
+  },
+
+  {
+    title:
+      "Software Development and Technical Support Intern - State Department \n for Housing and Urban Planning",
+    desc: (
+      <span>
+        Here, I worked in ICT department doubling as a support and a developer.
+        <br />I was involved in developing:
+        <br /> - A simple chatbot system for help and support <br />
+        - A leave management system <br />
+        - A GeoSpatial national database and supporting web application <br />-
+        Data cleaning and processing
+      </span>
+    ),
+    imgAlt: "",
+    imgUrl: "",
+    link: "",
+    projectBadges: ["In Office", "Kenya", "Jun 2023", "Aug 2023"],
+    techBadges: [
+      "NextJs/ Vue",
+      "TailwindCss/ ShadCn",
+      "NestJs",
+      "Postgres",
+      "GeoSpatial Database",
+      "Cloud Computing",
+    ],
+  },
+  {
+    desc: (
+      <span>
         At Sellhustle I was leading the team in integrating and improving web
         applications.
         <br /> The work included but was not limited to integrating web apps
@@ -110,40 +186,37 @@ let work: IProject[] = [
     ],
     title: "Senior Frontend Developer - Sellhustle",
   },
-  {
-    title:
-      "Software Development and Technical Support Intern - State Department \n for Housing and Urban Planning",
-    desc: (
-      <span>
-        Here, I worked in ICT department doubling as a support and a developer.
-        <br />I was involved in developing:
-        <br /> 1. A simple chatbot system for help and support <br />
-        2. A leave management system <br />
-        3. A GeoSpatial national database and supporting web application <br />
-        4. Data cleaning and processing
-      </span>
-    ),
-    imgAlt: "",
-    imgUrl: "",
-    link: "",
-    projectBadges: ["In Office", "Kenya", "Jun 2023", "Aug 2023"],
-    techBadges: [
-      "NextJs/ Vue",
-      "TailwindCss/ ShadCn",
-      "NestJs",
-      "Postgres",
-      "GeoSpatial Database",
-      "Cloud Computing",
-    ],
-  },
 ];
 
 let projects: IProject[] = [
   {
     desc: (
       <span>
-        {" "}
-        A redis implementation for a subset of it's features
+        Solved the following distributed sytems challenges
+        <br />
+        1. Echo <br />
+        2. Fault Tolerant Message Broadcast <br />
+        3. Multi Node Unique Id Generation <br />
+        4. Kafka-Style Log <br />
+      </span>
+    ),
+    imgAlt: "gossipglomers logo",
+    imgUrl: "https://fly.io/static/images/gossipers.webp",
+    link: "https://github.com/kariuki-george/gossip-glomers",
+    projectBadges: [
+      "Distributed Systems",
+      "Multithreading",
+      "Consistency",
+      "Availability",
+      "Partition Tolerance",
+    ],
+    techBadges: ["Rust", "Tokio", "Golang", "IO", "Data Structures"],
+    title: "Gossip Glomers Challenge",
+  },
+  {
+    desc: (
+      <span>
+        A redis implementation for a subset of it &apos;s features
         <br />
         Supported Functionalities: <br />
         1. Ping <br />

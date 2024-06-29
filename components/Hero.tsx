@@ -23,9 +23,7 @@ const Hero: NextPage = () => {
           I&apos;m Kariuki <span className="text-green-brand">George</span>
         </span>
 
-        <p className="text-lg">
-          Fullstack web developer, optimist and technophile
-        </p>
+        <p className="text-lg">software developer, optimist and technophile</p>
 
         <a href="#contacts" className="w-full flex justify-center">
           <Button className="w-2/3  my-10" variant={"outline"}>
