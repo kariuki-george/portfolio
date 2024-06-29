@@ -53,7 +53,7 @@ const Projects: NextPage = () => {
                     height={200}
                     width={200}
                     // Use a cleaner solution
-                    className={index == 0 && "bg-gray-200"}
+                    className={index == 0 ? "bg-gray-200" : ""}
                   />
                 </aside>
                 <main className="h-full  flex flex-col gap-3">
