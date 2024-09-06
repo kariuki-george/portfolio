@@ -100,7 +100,7 @@ let work: IProject[] = [
     link: "https://www.safaricom.co.ke/",
     projectBadges: ["Hybrid", "Nairobi", "April 2024", "Present"],
     techBadges: ["Rust", "Linux Kernel", "Ebpf", "Kafka", "Clickhouse"],
-    title: "Service Availability Developer Intern - Safaricom PLC",
+    title: "Service Availability Software Engineer - Safaricom PLC",
   },
   {
     desc: (
