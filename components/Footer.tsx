@@ -12,7 +12,7 @@ const Footer: NextPage = () => {
       <Link href="/" passHref>
         <span className="text-2xl hover:cursor-pointer">thuo</span>
       </Link>
-      <span>&copy; 2024 </span>
+      <span>&copy; 2025 </span>
       <span
         onClick={handleTop}
         className=" bg-green-brand/5 rounded border p-2 hover:text-white hover:cursor-pointer"

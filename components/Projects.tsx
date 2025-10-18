@@ -192,6 +192,32 @@ let projects: IProject[] = [
   {
     desc: (
       <span>
+        <strong>Tunnelicious</strong> — a lightweight HTTP traffic tunneling
+        system that securely exposes your local or internal services to the
+        internet over HTTPS.
+        <br />
+        Inspired by ngrok and Cloudflare Tunnels, it provides a simple
+        agent–proxy architecture for fast, secure, and developer-friendly local
+        access.
+      </span>
+    ),
+    imgAlt: "tunnelicious logo",
+    imgUrl:
+      "https://i.pinimg.com/1200x/d4/1a/62/d41a629dd304ae1d5e03677c4a6b4c5f.jpg",
+    link: "https://github.com/kariuki-george/tunnelicious",
+    projectBadges: [
+      "Distributed Systems",
+      "Multithreading",
+      "Tunneling",
+      "Streaming",
+      "Proxying",
+    ],
+    techBadges: ["Go", "HTTP/2", "gRPC", "Microservices", "Cloudflare Tunnels"],
+    title: "Tunnelicious",
+  },
+  {
+    desc: (
+      <span>
         Solved the following distributed sytems challenges
         <br />
         1. Echo <br />

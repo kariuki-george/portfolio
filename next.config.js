@@ -10,6 +10,7 @@ const nextConfig = {
       "pbs.twimg.com",
       "cdn.hashnode.com",
       "fly.io",
+      "i.pinimg.com",
     ],
   },
 };
