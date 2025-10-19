@@ -204,7 +204,7 @@ let projects: IProject[] = [
     imgAlt: "tunnelicious logo",
     imgUrl:
       "https://i.pinimg.com/1200x/d4/1a/62/d41a629dd304ae1d5e03677c4a6b4c5f.jpg",
-    link: "https://github.com/kariuki-george/tunnelicious",
+    link: "tunnelicious.kariukigeorge.me",
     projectBadges: [
       "Distributed Systems",
       "Multithreading",
