@@ -1,5 +1,3 @@
 "use client";
 
-import * as Kbar from "kbar";
-
-export default Kbar;
+export * from "kbar";
