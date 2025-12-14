@@ -14,11 +14,7 @@ const About: NextPage = () => {
         <p>
           Hello! I'm Kariuki George — a Software Developer & Site Reliability
           Engineer passionate about building high-performance, scalable systems
-          and creating intuitive user experiences.
-        </p>
-
-        <p>
-          I'm a software developer (systems and web) and Rust enthusiast,
+          and creating intuitive user experiences. I'm a Rust enthusiast
           currently working at{" "}
           <a
             href="https://www.safaricom.co.ke/"

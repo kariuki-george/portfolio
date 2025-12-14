@@ -15,7 +15,7 @@ const Footer: NextPage = () => {
       <div className="max-w-[900px] mx-auto flex justify-between p-10 my-10 items-center">
         <Link href="/" passHref>
           <span className="text-2xl hover:cursor-pointer font-bold hover:opacity-80 transition-opacity">
-           <AnimatedText text="thuo" />
+            <AnimatedText text="thuo" />
           </span>
         </Link>
         <span className="text-gray-400">&copy; 2025 </span>
