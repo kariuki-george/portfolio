@@ -18,7 +18,7 @@ const Footer: NextPage = () => {
             <AnimatedText text="thuo" />
           </span>
         </Link>
-        <span className="text-gray-400">&copy; 2025 </span>
+        <span className="text-gray-400">&copy; 2026 </span>
         <span
           onClick={handleTop}
           className="bg-dark-800 border border-dark-700 rounded-lg p-3 hover:bg-green-brand hover:text-black hover:cursor-pointer transition-all"
